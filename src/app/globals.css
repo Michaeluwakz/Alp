@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Set default body font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Set default headline font */
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+
+    --card: 0 0% 8%; /* Dark Gray for cards */
+    --card-foreground: 0 0% 95%; /* Light Gray/White text for cards */
+
+    --popover: 0 0% 8%; /* Dark Gray for popovers */
+    --popover-foreground: 0 0% 95%; /* Light Gray/White text for popovers */
+
+    --primary: 33 100% 50%; /* Bright Orange #FF8C00 */
+    --primary-foreground: 0 0% 100%; /* White text on orange */
+
+    --secondary: 0 0% 15%; /* Darker Gray for secondary elements */
+    --secondary-foreground: 0 0% 90%; /* Lighter Gray for secondary text */
+
+    --muted: 0 0% 12%; /* Muted dark gray */
+    --muted-foreground: 0 0% 60%; /* Muted lighter gray text */
+
+    --accent: 0 0% 100%; /* White for accent elements like icons, lines */
+    --accent-foreground: 0 0% 0%; /* Black text on white accent backgrounds */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%; /* Slightly lighter gray for borders */
+    --input: 0 0% 10%; /* Dark gray for input backgrounds */
+    --ring: 33 100% 50%; /* Bright Orange for focus rings */
+
+    --radius: 0.5rem;
+
+    --chart-1: 33 100% 50%; /* Orange */
+    --chart-2: 210 40% 96%; /* Light Blue-Gray */
+    --chart-3: 160 60% 45%; /* Teal */
+    --chart-4: 43 74% 66%; /* Yellow-Orange */
+    --chart-5: 27 87% 67%; /* Light Orange */
+
+    /* Sidebar variables, adjusted for dark theme */
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 33 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 33 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+
+    --card: 0 0% 8%; /* Dark Gray for cards */
+    --card-foreground: 0 0% 95%; /* Light Gray/White text for cards */
+
+    --popover: 0 0% 8%; /* Dark Gray for popovers */
+    --popover-foreground: 0 0% 95%; /* Light Gray/White text for popovers */
+
+    --primary: 33 100% 50%; /* Bright Orange #FF8C00 */
+    --primary-foreground: 0 0% 100%; /* White text on orange */
+
+    --secondary: 0 0% 15%; /* Darker Gray for secondary elements */
+    --secondary-foreground: 0 0% 90%; /* Lighter Gray for secondary text */
+
+    --muted: 0 0% 12%; /* Muted dark gray */
+    --muted-foreground: 0 0% 60%; /* Muted lighter gray text */
+
+    --accent: 0 0% 100%; /* White for accent elements like icons, lines */
+    --accent-foreground: 0 0% 0%; /* Black text on white accent backgrounds */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%; /* Slightly lighter gray for borders */
+    --input: 0 0% 10%; /* Dark gray for input backgrounds */
+    --ring: 33 100% 50%; /* Bright Orange for focus rings */
+
+    --chart-1: 33 100% 50%;
+    --chart-2: 210 40% 96%;
+    --chart-3: 160 60% 45%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    
+    /* Sidebar variables, consistent with main dark theme */
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 33 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 33 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
