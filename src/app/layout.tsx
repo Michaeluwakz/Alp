@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Apholaby Bespoke Interiors',
+  title: 'Apholaby Enterprises Ltd',
   description: 'Crafting unique and inspiring interiors tailored to your vision.',
 };
 

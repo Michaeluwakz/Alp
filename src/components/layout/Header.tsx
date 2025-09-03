@@ -5,15 +5,16 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, X, Briefcase, Sparkles, Users, Brain, MessageCircle } from 'lucide-react';
+import { Menu, X, Briefcase, Sparkles, Users, Brain, MessageCircle, Info } from 'lucide-react';
 import Image from 'next/image';
 
 const navItems = [
-  { href: '#services', label: 'Services', icon: Briefcase },
-  { href: '#portfolio', label: 'Portfolio', icon: Sparkles },
-  { href: '#why-choose-us', label: 'Why Us', icon: Users },
-  { href: '#style-quiz', label: 'Style Quiz', icon: Brain },
-  { href: '#contact', label: 'Contact', icon: MessageCircle },
+  { href: '/about', label: 'About Us', icon: Info },
+  { href: '/#services', label: 'Services', icon: Briefcase },
+  { href: '/#portfolio', label: 'Portfolio', icon: Sparkles },
+  { href: '/#why-choose-us', label: 'Why Us', icon: Users },
+  { href: '/#quote-form', label: 'Get Quote', icon: Brain },
+  { href: '/#contact', label: 'Contact', icon: MessageCircle },
 ];
 
 export default function Header() {

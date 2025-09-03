@@ -5,8 +5,9 @@ import HeroSection from '@/components/sections/HeroSection';
 import ServiceShowcase from '@/components/sections/ServiceShowcase';
 import ProjectPortfolio from '@/components/sections/ProjectPortfolio';
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
-import StyleQuizSection from '@/components/sections/StyleQuizSection';
+import QuoteFormSection from '@/components/sections/QuoteFormSection';
 import ContactSection from '@/components/sections/ContactSection';
+
 
 export default function HomePage() {
   return (
@@ -17,7 +18,7 @@ export default function HomePage() {
         <ServiceShowcase id="services" />
         <ProjectPortfolio id="portfolio" />
         <WhyChooseUsSection id="why-choose-us" />
-        <StyleQuizSection id="style-quiz" />
+        <QuoteFormSection id="quote-form" />
         <ContactSection id="contact" />
       </main>
       <FloatingCTAButton />

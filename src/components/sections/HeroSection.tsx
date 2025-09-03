@@ -18,10 +18,13 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/60 z-10"></div>
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <h1 className="font-headline text-4xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl drop-shadow-md">
-          Apholaby Bespoke Interiors
+          Apholaby Enterprises Ltd
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-gray-200 sm:text-xl drop-shadow-sm">
-          Crafting unique and inspiring interiors tailored to your vision. We bring your dream spaces to life with creativity and precision.
+          General home contractor and commercial interior services
+        </p>
+        <p className="mt-2 text-base text-gray-300 sm:text-lg drop-shadow-sm italic">
+          "Building dreams, designing spaces"
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="#contact">
@@ -29,9 +32,9 @@ export default function HeroSection() {
               Get a Quote
             </Button>
           </Link>
-          <Link href="#portfolio">
+          <Link href="#contact">
             <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-3 text-lg">
-              View Our Work
+              Book for inspection
             </Button>
           </Link>
         </div>

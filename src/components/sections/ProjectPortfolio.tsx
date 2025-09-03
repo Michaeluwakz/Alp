@@ -55,7 +55,7 @@ const allProjects: Project[] = [
   { id: 'commercial-img-Vc6fWghJ', title: 'Hotel Lobby Design', category: 'Commercial', imageSrc: 'https://i.ibb.co/Vc6fWghJ/image.png', imageHint: 'hotel lobby' },
   { id: 'commercial-img-9kQvyGm3', title: 'Creative Studio Space', category: 'Commercial', imageSrc: 'https://i.ibb.co/9kQvyGm3/image.png', imageHint: 'studio space' },
   { id: 'pop-img-1', title: 'POP Design Ceiling', category: 'POP', imageSrc: 'https://i.ibb.co/r2kfb0Ns/image.png', imageHint: 'pop ceiling' },
-  { id: 'pop-img-2', title: 'POP Wall Installation', category: 'POP', imageSrc: 'https://i.ibb.co/mr8V90jF/image.png', imageHint: 'pop wall' },
+
 ];
 
 const categories = ['All', ...new Set(allProjects.map(p => p.category))];

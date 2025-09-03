@@ -45,6 +45,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.bigsteelbox.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

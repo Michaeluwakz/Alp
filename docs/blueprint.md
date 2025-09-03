@@ -1,4 +1,4 @@
-# **App Name**: Apholaby Bespoke Interiors
+# **App Name**: Apholaby Enterprises Ltd
 
 ## Core Features:
 

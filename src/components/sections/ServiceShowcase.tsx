@@ -7,11 +7,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Home, Building, Lamp, Wrench, Sparkles } from 'lucide-react';
 
 const servicesData: Service[] = [
-  { id: 'residential', icon: Home, title: 'Residential Design', description: 'Creating beautiful and functional living spaces tailored to your lifestyle.', imageSrc: 'https://decorcity.com.ng/wp-content/uploads/2023/05/Residential-Living-Room-Interior-Design-by-Decor-City-Nigeria-03.jpg', imageHint: 'living room' },
-  { id: 'commercial', icon: Building, title: 'Commercial Spaces', description: 'Designing inspiring and productive environments for businesses and organizations.', imageSrc: 'https://thearchitectsdiary.com/wp-content/uploads/2023/11/Interior-design-5-jpg.webp', imageHint: 'office interior' },
-  { id: 'lighting', icon: Lamp, title: 'Lighting Design', description: 'Expert lighting solutions to enhance ambiance and functionality in any room.', imageSrc: 'https://i.pinimg.com/736x/61/b5/fe/61b5fe8feccabe7cbbf69b9de0c06cc5.jpg', imageHint: 'modern lighting' },
-  { id: 'renovations', icon: Wrench, title: 'Renovations', description: 'Transforming existing spaces with innovative renovation and remodeling services.', imageSrc: 'https://www.bigsteelbox.com/wp-content/uploads/2019/11/Home-renovation-costs-2100x1200.jpg', imageHint: 'kitchen renovation' },
-  { id: 'styling', icon: Sparkles, title: 'Styling & Decor', description: 'Adding the perfect finishing touches with curated decor and styling expertise.', imageSrc: 'https://decorcity.com.ng/wp-content/uploads/2023/05/Residential-Living-Room-Interior-Design-by-Decor-City-Nigeria-02.jpg', imageHint: 'home decor' },
+  { id: 'general-contractor', icon: Wrench, title: 'General home contractor', description: 'Complete home construction and renovation services from foundation to finishing touches.', imageSrc: 'https://www.bigsteelbox.com/wp-content/uploads/2019/11/Home-renovation-costs-2100x1200.jpg', imageHint: 'home construction' },
+  { id: 'residential', icon: Home, title: 'Residential interior/exterior', description: 'Creating beautiful and functional living spaces both inside and outside your home.', imageSrc: 'https://decorcity.com.ng/wp-content/uploads/2023/05/Residential-Living-Room-Interior-Design-by-Decor-City-Nigeria-03.jpg', imageHint: 'residential design' },
+  { id: 'commercial', icon: Building, title: 'Commercial interior/exterior', description: 'Designing inspiring and productive environments for businesses and organizations.', imageSrc: 'https://thearchitectsdiary.com/wp-content/uploads/2023/11/Interior-design-5-jpg.webp', imageHint: 'commercial design' },
+  { id: 'renovations', icon: Wrench, title: 'Renovation', description: 'Transforming existing spaces with innovative renovation and remodeling services.', imageSrc: 'https://i.ibb.co/9m7PpsZj/image.png', imageHint: 'renovation work' },
+  { id: 'styling', icon: Sparkles, title: 'Styling and decoration', description: 'Adding the perfect finishing touches with curated decor and styling expertise.', imageSrc: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80', imageHint: 'styling decor' },
 ];
 
 export default function ServiceShowcase({ id }: { id: string }) {

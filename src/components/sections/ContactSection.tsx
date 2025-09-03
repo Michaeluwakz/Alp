@@ -1,30 +1,11 @@
 
 "use client";
 
-import { useForm, type SubmitHandler } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { submitContactForm } from '@/app/actions';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { useToast } from '@/hooks/use-toast';
-import { Loader2, Mail, Send } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Mail } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
 
-const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters long.").max(100),
-  email: z.string().email("Please enter a valid email address.").max(100),
-  phone: z.string().optional().refine(val => !val || /^[+]?[0-9\s-()]{7,20}$/.test(val), {
-    message: "Please enter a valid phone number.",
-  }),
-  message: z.string().min(10, "Message must be at least 10 characters long.").max(1000),
-});
 
-type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 const WhatsAppIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -34,53 +15,6 @@ const WhatsAppIcon = () => (
 
 
 export default function ContactSection({ id }: { id: string }) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-    },
-  });
-
-  const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
-    setIsSubmitting(true);
-    const formData = new FormData();
-    Object.entries(data).forEach(([key, value]) => {
-      if (value) formData.append(key, value as string);
-    });
-
-    const result = await submitContactForm(formData);
-    
-    if (result.success && result.redirectTo) {
-      window.location.href = result.redirectTo;
-      // setIsSubmitting(false); // State will reset on navigation or if component unmounts
-      // form.reset(); // Form will clear on navigation or if component unmounts
-    } else if (result.success) { // Fallback if redirectTo is somehow not provided
-      setIsSubmitting(false);
-      toast({
-        title: "Message Processed!",
-        description: result.message || "Your message is ready.",
-      });
-      form.reset();
-    }
-     else {
-      setIsSubmitting(false);
-      toast({
-        variant: "destructive",
-        title: "Submission Error",
-        description: result.message || "Please correct the errors and try again.",
-      });
-      if(result.errors) {
-        Object.entries(result.errors).forEach(([field, errors]) => {
-          form.setError(field as keyof ContactFormValues, { message: (errors as string[])[0] });
-        });
-      }
-    }
-  };
 
   return (
     <section id={id} className="py-16 sm:py-24 bg-secondary">
@@ -92,83 +26,8 @@ export default function ContactSection({ id }: { id: string }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <Card className="bg-card shadow-xl">
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl text-card-foreground">Send Us a Message</CardTitle>
-              <CardDescription className="text-card-foreground/70">We'll get back to you as soon as possible.</CardDescription>
-            </CardHeader>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)}>
-                <CardContent className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-card-foreground">Full Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your Name" {...field} className="bg-input text-foreground placeholder:text-muted-foreground" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-card-foreground">Email Address</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="your.email@example.com" {...field} className="bg-input text-foreground placeholder:text-muted-foreground" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-card-foreground">Phone Number (Optional)</FormLabel>
-                        <FormControl>
-                          <Input type="tel" placeholder="Your Phone Number" {...field} className="bg-input text-foreground placeholder:text-muted-foreground" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-card-foreground">Your Message</FormLabel>
-                        <FormControl>
-                          <Textarea placeholder="Tell us about your project or inquiry..." {...field} rows={5} className="bg-input text-foreground placeholder:text-muted-foreground" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </CardContent>
-                <CardFooter>
-                  <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    {isSubmitting ? (
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                       <Send className="mr-2 h-4 w-4" />
-                    )}
-                    Send Message
-                  </Button>
-                </CardFooter>
-              </form>
-            </Form>
-          </Card>
-
-          <div className="space-y-8">
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
             <Card className="bg-card shadow-xl">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl text-card-foreground">Direct Contact</CardTitle>
@@ -191,7 +50,7 @@ export default function ContactSection({ id }: { id: string }) {
                 <CardTitle className="font-headline text-2xl text-card-foreground">Visit Us (By Appointment)</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-card-foreground/80">📍 21 Fatai Atere Lagos Nigeria</p>
+                <p className="text-card-foreground/80">📍 21 Fatai Atere opposite OK foods, Mushin Lagos Nigeria</p>
                 <p className="text-sm text-card-foreground/60 mt-2">Please call or email to schedule an appointment.</p>
               </CardContent>
             </Card>
