@@ -9,10 +9,10 @@ export default function HeroSection() {
         src="https://i.ibb.co/dsnHGnMN/Untitled-design-1.png"
         alt="Luxurious modern interior design"
         layout="fill"
-        objectFit="cover"
+        objectFit="contain"
         objectPosition="center"
         quality={80}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 sm:object-cover"
         data-ai-hint="modern interior"
         priority
       />
