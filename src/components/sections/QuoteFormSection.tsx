@@ -27,6 +27,7 @@ const projectTypeOptions = [
   { value: 'commercial', label: 'Commercial' },
   { value: 'interior', label: 'Interior' },
   { value: 'exterior', label: 'Exterior' },
+  { value: 'renovation', label: 'Renovation' },
 ];
 
 export default function QuoteFormSection({ id }: { id: string }) {

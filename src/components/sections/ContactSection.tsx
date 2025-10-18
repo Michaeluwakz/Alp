@@ -38,11 +38,17 @@ export default function ContactSection({ id }: { id: string }) {
                   <WhatsAppIcon />
                   <span className="text-card-foreground group-hover:text-primary">Chat on WhatsApp</span>
                 </Link>
-                <Link href="mailto:contact@apholaby.com" className="flex items-center space-x-3 p-3 rounded-md hover:bg-secondary transition-colors group">
+                <Link href="mailto:Support@apholabyenterprises.com" className="flex items-center space-x-3 p-3 rounded-md hover:bg-secondary transition-colors group">
                   <Mail className="h-6 w-6 text-primary" />
-                  <p><span className="text-card-foreground group-hover:text-primary">Support@apholabyenterprises.com</span></p>
-                  <p><span className="text-card-foreground group-hover:text-primary">Enquires@apholabyenterprises.com</span></p>
-                  <p><span className="text-card-foreground group-hover:text-primary">Temmyjoe@apholabyenterprises.com</span></p>
+                  <span className="text-card-foreground group-hover:text-primary">Support@apholabyenterprises.com</span>
+                </Link>
+                <Link href="mailto:Enquires@apholabyenterprises.com" className="flex items-center space-x-3 p-3 rounded-md hover:bg-secondary transition-colors group">
+                  <Mail className="h-6 w-6 text-primary" />
+                  <span className="text-card-foreground group-hover:text-primary">Enquires@apholabyenterprises.com</span>
+                </Link>
+                <Link href="mailto:Temmyjoe@apholabyenterprises.com" className="flex items-center space-x-3 p-3 rounded-md hover:bg-secondary transition-colors group">
+                  <Mail className="h-6 w-6 text-primary" />
+                  <span className="text-card-foreground group-hover:text-primary">Temmyjoe@apholabyenterprises.com</span>
                 </Link>
               </CardContent>
             </Card>
